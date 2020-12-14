@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import GridView from './components/GridView';
+import MatToolbar from './components/mat_toolbar';
+import Acc from './components/acc';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <MatToolbar />
+      <div className=" body_style">
+
+        <Acc />
+        <GridView />
+        {/* divider */}
+        <div className="hr" ></div>
+        {/* <h2 _ngcontent-ofg-c212="" className="sectionTitle">See other dashboard solutions</h2>
+        <p _ngcontent-ofg-c212="" class="sectionSubtitle">Experience the same dataset with a different technology</p>
+        <div className="divider"></div> */}
+
+      </div>
+
     </div>
   );
 }
