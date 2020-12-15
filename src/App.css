@@ -33,9 +33,7 @@
 .acc_spacing{
   padding-bottom: 2%;
 }
-.spacing{
-  padding-top: 1%;
-}
+
 
 .sectionTitle[_ngcontent-ofg-c212] {
   font-family: Lora;
@@ -133,7 +131,7 @@ align-items: center;
 .paperContent{
  display: flex;
  flex-direction: row;
- /* flex-wrap: nowrap; */
+ flex-wrap: nowrap;
  width: 100%;
  margin-top: 10px;
   min-height: 40%;
@@ -152,10 +150,10 @@ text-align: left;
   min-width: 70%; 
   position: relative;
   font-size: 14px;
-  /* float: right; */
+  float: right;
   padding-right: 25px;
-  padding-top: 5px;
-/* justify-content: flex-end; */
+  /* padding-top: 5px; */
+justify-content: flex-end;
  text-align: right;
  /* vertical-align: baseline; */
  font: "500 16px/24px IBM Plex Sans";
@@ -177,5 +175,3 @@ text-align: left;
   
   margin: 3rem auto 5rem;
 }
-
-@media (min)

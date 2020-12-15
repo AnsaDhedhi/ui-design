@@ -8,23 +8,28 @@ import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography';
 import MonetizationOnRoundedIcon from '@material-ui/icons/MonetizationOnRounded';
 import CountUp from 'react-countup';
-
+import SIcon from './sortIcon';
+import MIcon from './menuIcon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 3,
     marginBottom: "2px",
     marginTop: "15px",
+    fontWeight: "600",
+    color: "#797979",
+    fontSize: "1rem",
 
   },
 
   paper: {
-    padding: theme.spacing(5),
+    padding: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
     alignContent: "spacing",
     // alignContent: "center",
-    height: "450px",
+    // height: "450px",
     display: "flex",
     flexDirection: "row",
     paddingTop: "10px",
@@ -38,8 +43,9 @@ const useStyles = makeStyles((theme) => ({
   },
   Content: {
     [theme.breakpoints.down('sm')]: {
-      direction: "column",
-      fontSize: "75%"
+      display: "block",
+
+      // fontSize: "90%"
     },
 
   },
@@ -61,216 +67,293 @@ export default function GridView() {
     <div
 
       className={classes.root}>
-      <Grid container stretch spacing={1} >
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} style={{ maxHeight: "225px" }}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Total Orders
-          </span>
-                <span style={{ float: "right" }} className="rightSection">
+      <Grid container>
 
 
-                </span>
-              </Grid>
-              <Grid style={{ wrap: "nowrap" }} className="paperContent + classes.Content">
 
-                <span className="leftSection">
-                  <ShoppingBasketIcon style={{ fontSize: "3rem", color: "#505050" }} />
-                </span>
-                <span className="rightSection" style={{ float: "right" }}>
+        <Grid container stretch spacing={1} >
 
-                  <Typography variant="h4" gutterBottom className={classes.Content}>
-                    <CountUp start={0} end={10000} duration={2.75} separator="," />
+          <Grid item sm={6} xs={12}>
+            <Paper className={classes.paper} >
+              <Grid container direction="column" >
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Total Orders
+                  </Grid>
 
-                  </Typography>
+                </Grid>
 
-                </span>
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item >
+                    <ShoppingBasketIcon style={{ fontSize: "3rem", color: "#505050" }} />
+                  </Grid>
+                  <Grid item alignItems="center">
+                    <Typography variant="h4" gutterBottom >
+                      <CountUp start={0} end={10000} duration={2.75} separator="," />
+                    </Typography>
 
-              </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item>
 
-              <div className="paperFooter">
-                <img src="/images/grid1.png" alt="grid1" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper} style={{ maxHeight: "225px" }}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Total Profit
-          </span>
-                <span style={{ float: "right" }} className="rightSection">
+                  <img src="/images/grid1.png" alt="grid1" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
 
-
-                </span>
-              </Grid>
-              <Grid style={{ wrap: "wrap" }} className="paperContent">
-
-                <span className="leftSection">
-                  <MonetizationOnRoundedIcon style={{ fontSize: "3rem", color: "#505050" }} />
-                </span>
-                <span className="rightSection" style={{ float: "right" }}>
-
-                  <Typography variant="h4" className={classes.Content} style={{ marginRight: "2px", }}>
-                    <CountUp start={0} end={3950893472} duration={2.75} separator="," />
-
-                  </Typography>
-
-                </span>
+                </Grid>
 
               </Grid>
 
-              <div className="paperFooter">
-                <img src="/images/grid1.png" alt="grid1" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
-        </Grid>
 
-      </Grid>
+            </Paper>
 
-      <Grid container spacing={1} className={"spacing"}>
-        <Grid item xs={12} sm={7}>
-          <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Orders by category
+          </Grid >
+          <Grid item sm={6} xs={12} >
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
+                <Grid container justify="space-between" alignContent="flex-start" >
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Total Profit
+                  </Grid>
 
-          </span>
+                </Grid>
+
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item >
+                    <MonetizationOnRoundedIcon style={{ fontSize: "3rem", color: "#505050" }} />
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="h4" >
+                      <CountUp start={0} end={3950893472} duration={2.75} separator="," />
+                    </Typography>
+
+
+
+                  </Grid>
+                  <Grid item>
+                    <img src="/images/grid1.png" alt="grid1" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                  </Grid>
+
+
+
+                </Grid>
+
               </Grid >
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid3.png" alt="grid3" style={{ objectFit: "fill", padding: "5px", width: "100%", height: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
+            </Paper>
+          </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={5}>
-          <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Orders by audit
+        <Grid container spacing={1} className={"spacing"}>
+          <Grid item xs={12} sm={7}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
+                {/* <Grid container> */}
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Orders by category
 
-          </span>
-              </Grid >
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid4.png" alt="grid4" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
+                  </Grid>
+
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+                {/* </Grid > */}
+                <div>
+                  <img className={classes.image} src="/images/grid3.png" alt="grid3" style={{ padding: "5px", width: "100%" }} />
+                </div>
+              </Grid>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12} sm={5}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Orders by Audit
+                  </Grid>
+
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+                <div>
+                  <img className={classes.image} src="/images/grid4.png" alt="grid4" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                </div>
+              </Grid>
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
 
-      <Grid container spacing={1} className={"spacing"}>
-        <Grid item xs={12} sm={5}>
-          <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Orders by sales channel
+        <Grid container spacing={1} className={"spacing"}>
+          <Grid item xs={12} sm={5}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
 
-          </span>
-              </Grid >
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid5.png" alt="grid5" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Orders by Sales Channel
+                  </Grid>
+
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+                <div >
+                  <img className={classes.image} src="/images/grid5.png" alt="grid5" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                </div>
+              </Grid>
+            </Paper>
+          </Grid >
+
+          <Grid item xs={12} sm={7}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Orders by region
+
+                  </Grid>
+
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+                <div>
+                  <img className={classes.image} src="/images/grid6.png" alt="grid6" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                </div>
+              </Grid>
+            </Paper>
+          </Grid>
         </Grid >
 
-        <Grid item xs={12} sm={7}>
+        <Grid item className={"spacing"} sm={12}>
           <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Orders by region
+            <Grid container direction="column">
 
-          </span>
-                <span style={{ float: "right" }} className="rightSection">
+              <Grid container justify="space-between" alignContent="flex-start">
+                <Grid item style={{ paddingTop: "10px" }}>
+                  Sales and profit by country
 
+                  </Grid>
 
-                </span>
+                <Grid item>
+                  <Grid container direction="row" >
+                    <span>
+                      <SIcon />
+                    </span>
+                    <span>
+                      <MIcon />
+                    </span>
+                  </Grid>
+                </Grid>
+
               </Grid>
 
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid6.png" alt="grid6" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+              <div>
+                <img className={classes.image} src="/images/grid7.png" alt="grid7" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
               </div>
             </Grid>
           </Paper>
         </Grid>
-      </Grid >
 
-      <Grid item className={"spacing"} sm={12}>
-        <Paper className={classes.paper}>
-          <Grid container direction="row">
-            <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-              <span className="leftSection">
-                Sales and profit by country
+        <Grid container spacing={1} className={"spacing"}>
+          <Grid item xs={12} sm={5}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
 
-          </span>
-              <span style={{ float: "right" }} className="rightSection">
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Order priority
 
+                  </Grid>
 
-              </span>
-            </Grid>
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
 
-            <div style={{ height: "80%" }} className="paperFooter">
-              <img className={classes.image} src="/images/grid7.png" alt="grid7" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-            </div>
+                </Grid>
+
+                <div>
+                  <img className={classes.image} src="/images/grid8.png" alt="grid8" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                </div>
+              </Grid>
+            </Paper>
           </Grid>
-        </Paper>
-      </Grid>
-      <Grid container spacing={1} className={"spacing"}>
-        <Grid item xs={12} sm={5}>
-          <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Order priority
 
-          </span>
-                <span style={{ float: "right" }} className="rightSection">
+          <Grid item xs={12} sm={7}>
+            <Paper className={classes.paper}>
+              <Grid container direction="column">
 
+                <Grid container justify="space-between" alignContent="flex-start">
+                  <Grid item style={{ paddingTop: "10px" }}>
+                    Sales trend
 
-                </span>
+                  </Grid>
+
+                  <Grid item>
+                    <Grid container direction="row" >
+                      <span>
+                        <SIcon />
+                      </span>
+                      <span>
+                        <MIcon />
+                      </span>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+                <div>
+                  <img className={classes.image} src="/images/grid9.png" alt="grid9" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
+                </div>
               </Grid>
-
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid8.png" alt="grid8" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
+            </Paper>
+          </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={7}>
-          <Paper className={classes.paper}>
-            <Grid container direction="row">
-              <Grid style={{ wrap: "nowrap" }} className="paperHeader" >
-                <span className="leftSection">
-                  Sales trend
-
-          </span>
-                <span style={{ float: "right" }} className="rightSection">
-
-
-                </span>
-              </Grid>
-
-              <div style={{ height: "80%" }} className="paperFooter">
-                <img className={classes.image} src="/images/grid9.png" alt="grid9" style={{ objectFit: "fill", padding: "5px", width: "100%" }} />
-              </div>
-            </Grid>
-          </Paper>
-        </Grid>
       </Grid>
-
-
-    </div>
+    </div >
   );
 }

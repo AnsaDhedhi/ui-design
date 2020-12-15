@@ -13,7 +13,7 @@ function App() {
       <div className=" body_style">
 
         <Acc />
-        <div>
+        <div className="grid">
           <GridView />
         </div>
         {/* divider */}
