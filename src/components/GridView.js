@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     alignContent: "spacing",
     // alignContent: "center",
-    // height: "450px",
+    // height: "100%",
     display: "flex",
     flexDirection: "row",
     paddingTop: "10px",
     [theme.breakpoints.up('xm')]: {
-      height: "350px",
+      // height: "350px",
     },
   },
   Container: {
@@ -50,9 +50,12 @@ const useStyles = makeStyles((theme) => ({
 
   },
   image: {
+    height: "250px",
+    width: "250px",
     [theme.breakpoints.down('sm')]: {
-      height: "100%",
+
       boxSizing: "border-box",
+
 
     },
 
@@ -122,7 +125,7 @@ export default function GridView() {
                   </Grid>
                   <Grid item>
                     <Typography variant="h4" >
-                      <CountUp start={0} end={3950893472} duration={2.75} separator="," />
+                      <CountUp start={0} end={3589476} duration={2.75} separator="," />
                     </Typography>
 
 
