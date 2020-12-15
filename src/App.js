@@ -13,7 +13,9 @@ function App() {
       <div className=" body_style">
 
         <Acc />
-        <GridView />
+        <div>
+          <GridView />
+        </div>
         {/* divider */}
         <div className="hr" ></div>
         {/* <h2 _ngcontent-ofg-c212="" className="sectionTitle">See other dashboard solutions</h2>
